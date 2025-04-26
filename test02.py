@@ -4,4 +4,4 @@ from my_drone_func import *
 
 
 if __name__ == '__main__':
-
+    pass

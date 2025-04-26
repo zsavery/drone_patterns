@@ -1,26 +1,49 @@
+# Drone Patterns - Code Examples
 
-# x - axis
+## Directional Movement 
+
+### x - axis
+
+```python
 my_drone.forward(distance)
 my_drone.back(distance)
+```
 
-# y - axis
+### y - axis
+
+```python
 my_drone.left(distance)
 my_drone.right(distance)
+```
 
-# z - axis
+### z - axis
+
+```python
 my_drone.up(distance)
 my_drone.down(distance)
+```
 
-# flip
+### flip
+
+```python
 my_drone.flip('l')
 my_drone.flip('r')
+```
 
-# camera
+
+## camera
+
+```python
 my_drone.streamon()
 camera_state = my_drone.stream_state
 print(camera_state)
 my_drone.streamoff()
 camera_state = my_drone.stream_state
 print(camera_state)
+```
 
-# battery
+## Status 
+
+### battery
+
+###

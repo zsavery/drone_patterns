@@ -35,6 +35,7 @@ if __name__ == '__main__':
 
     drone.land()
 
+
     for i in range(6):
         print(f"Temp: {cord['temp'][i]} \nPressure: {cord['press'][i]}")
 

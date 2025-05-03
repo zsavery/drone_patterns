@@ -21,6 +21,7 @@ def get_height_attitude(drone: tello.Tello) -> None:
 def get_temp(drone: tello.Tello) -> None:
     temp = drone.get_temp()
     print(f"Temperature: {temp}")
+    # print("Temperature: %s".format(temp))
     drone.wait(1)
     print_battery(drone)
 
@@ -33,7 +34,6 @@ def get_pressure(drone: tello.Tello) -> None:
 def right_turn(drone: tello.Tello, degree: int) -> None:
     drone.cw(degree)
     drone.wait(.5)
-
 
 def get_pressureReport(d: tello.Tello, t) -> None:
     pressure = d.get_baro()

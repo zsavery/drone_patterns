@@ -37,9 +37,6 @@ my_drone.go(40, 5, 15, 5)
 # my_drone.wait(1)
 # my_drone.right(60)
 
-
-
-
 # Square
 distance = 15  # cm
 for i in range(4): # 0 ,1, 2, 3

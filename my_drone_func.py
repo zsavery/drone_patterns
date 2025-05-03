@@ -44,3 +44,26 @@ def get_tempReport(d: tello.Tello, t) -> None:
     temp = d.get_temp()
     print("air temp: {}".format(temp))
     sleep(t)
+
+
+def move_and_log_data(d: tello.Tello, coord: dict) -> dict:
+    d.go(coord["x"], coord["y"], coord["z"], speed=10)
+    try:
+        coord["temperature"].append(d.get_temp())
+
+    except Exception as e:
+        print(e, "\nSomething went wrong!")
+    finally:
+        sleep(1)
+
+    try:
+        coord["pressure"].append(d.get_temp())
+        sleep(1)
+    except TypeError as e:
+        print(e, "\nSomething went wrong!")
+    except Exception as e:
+        print(e, "\nSomething went wrong!")
+    finally:
+        sleep(1)
+
+    return coord

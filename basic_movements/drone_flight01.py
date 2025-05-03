@@ -5,7 +5,7 @@ if __name__ == "__main__":
     my_drone = tello.Tello()
 
     my_drone.takeoff()
-    '''
+
     # movement on x-axis
     my_drone.forward(distance)
     my_drone.back(distance)
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # movement on z-axis
     my_drone.up(distance)
     my_drone.down(distance)
-    '''
+
 
     # flips
     my_drone.flip('f')

@@ -7,12 +7,13 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
     drone = tello.Tello()
 
-    cord = {x: [0, 0, 5 , 10 , 15, 25],
-            y: [0, 10, 20, 30, 35, 20],
-            z: [10, 25, 40, 60, 30, 10],
-            temp: [],
-            press: []}
+    cord = {"x": [0, 0, 5 , 10 , 15, 25],
+            "y": [0, 10, 20, 30, 35, 20],
+            "z": [10, 25, 40, 60, 30, 10],
+            "temp": [],
+            "press": []}
 
+    '''
     for k, v in cord.items():
         pass
 
@@ -21,7 +22,7 @@ if __name__ == '__main__':
 
     for k in cord.keys():
         pass
-
+    '''
 
     drone.takeoff()
 
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     for i in range(6):
         print(f"Temp: {cord['temp'][i]} \nPressure: {cord['press'][i]}")
 
-    # create bar graph from drone data
+    # create a bar graph from drone data
     # https://www.geeksforgeeks.org/bar-plot-in-matplotlib/
     names = ["Temp", "Pressure"]
     plt.bar(names, cord["temp"], cord["press"], color='g')

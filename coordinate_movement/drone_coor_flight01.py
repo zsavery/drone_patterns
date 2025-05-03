@@ -4,13 +4,22 @@ from time import sleep
 
 def move_and_log_data(d: tello.Tello, coord: dict) -> dict:
     d.go(coord["x"], coord["y"], coord["z"], speed=10)
-
     try:
         coord["temperature"].append(d.get_temp())
+
+    except Exception as e:
+        print(e, "\nSomething went wrong!")
+    finally:
+        sleep(1)
+
+    try:
         coord["pressure"].append(d.get_temp())
         sleep(1)
     except Exception as e:
         print(e, "\nSomething went wrong!")
+    finally:
+        sleep(1)
+
     return coord
 
 if __name__ == '__main__':

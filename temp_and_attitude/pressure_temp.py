@@ -8,7 +8,7 @@ def get_tempReport(d: tello.Tello, t) -> None:
         print("air temp: {}".format(temp))
         sleep(t)
     except (AttributeError, TypeError) as  e:
-        print("None temperature is found, check if drone is running properly." +
+        print("No temperature is found, check if drone is running properly." +
               "\nError: {}".format(e))
 
 def get_pressureReport(d: tello.Tello, t) -> None:
@@ -17,7 +17,7 @@ def get_pressureReport(d: tello.Tello, t) -> None:
         print("air pressure: {}".format(pressure))
         sleep(t)
     except (AttributeError, TypeError) as e:
-        print("None atmospheric pressure is found, check if drone is running properly." +
+        print("No atmospheric pressure is found, check if drone is running properly." +
               "\nError: {}".format(e))
 
 if __name__ == '__main__':

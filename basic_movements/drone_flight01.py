@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
 
     # flips
-    my_drone.flip('f')
+    my_drone.flip('l')
+    my_drone.flip('r')
 
     my_drone.land()

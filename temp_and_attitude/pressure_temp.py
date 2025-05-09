@@ -7,8 +7,11 @@ def get_tempReport(d: tello.Tello, t) -> None:
         temp = d.get_temp()
         print("air temp: {}".format(temp))
         sleep(t)
-    except (AttributeError, TypeError) as  e:
-        print("No temperature is found, check if drone is running properly." +
+    except AttributeError as  e:
+        print("AttributeError: No temperature is found, check if drone is running properly." +
+              "\nError: {}".format(e))
+    except TypeError as  e:
+        print("TypeError: No temperature is found, check if drone is running properly." +
               "\nError: {}".format(e))
 
 def get_pressureReport(d: tello.Tello, t) -> None:
@@ -24,6 +27,7 @@ if __name__ == '__main__':
 
     # create drone object
     drone = tello.Tello()
+
     # how long the drone waits after a command in addition to waiting for a command to timeout or complete
     SLEEP_LENGTH = 2
     DISTANCE = 10
@@ -45,5 +49,9 @@ if __name__ == '__main__':
     get_tempReport(drone, SLEEP_LENGTH)
     get_pressureReport(drone, SLEEP_LENGTH)
 
+    drone.land()
 
 
+    count = 0
+    while count < 10:
+        print(f"count: {count}")

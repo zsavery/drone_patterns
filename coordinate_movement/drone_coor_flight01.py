@@ -19,6 +19,8 @@ def move_and_log_data(d: tello.Tello, coord: dict) -> dict:
     # Get temperature reading and append to list
     try:
         coord["temperature"].append(d.get_temp())
+    except AttributeError as e:
+        print(e, "\nNo temperature is found, check if drone is running properly.")
     except Exception as e:
         print(e, "\nSomething went wrong!")
     finally:

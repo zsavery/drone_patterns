@@ -1,5 +1,26 @@
 from random import randint
 # https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
+
+def binary_search(lst: list, num: int) -> None:
+    # find the midpoint of the list
+
+    # compare the number to the midpoint
+
+    if num == lst[midpoint]:
+        return lst[midpoint]
+
+    # split list in half into new_lst
+    """
+    new_lst = lst[midpoint+1:] - right half
+    new_lst = lst[:midpoint-1] - left half
+    
+    """
+
+    # call binary search on the new list
+    binary_search(new_lst, num)
+
+
+
 if __name__ == '__main__':
 
     lst_size = 16
@@ -35,3 +56,5 @@ if __name__ == '__main__':
       m
     []
     """
+
+    binary_search(num_lst, num_to_find)

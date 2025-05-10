@@ -1,5 +1,4 @@
-from easytello import tello
-from my_drone_func import *
+from temp_and_attitude.my_drone_func import *
 
 import matplotlib.pyplot as plt
 

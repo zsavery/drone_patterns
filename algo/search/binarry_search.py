@@ -12,5 +12,7 @@ if __name__ == '__main__':
     num_lst.sort()
     print(num_lst)
 
-# use user input to get the number to search for
-num_to_find = int(input("Enter a number to search for: "))
+    # use user input to get the number to search for
+    num_to_find = int(input("Enter a number to search for: "))
+
+    size = len(num_lst)

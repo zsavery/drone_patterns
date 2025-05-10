@@ -1,7 +1,7 @@
 from random import randint
 # https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
 
-def binary_search(lst: list, num: int) -> None:
+def binary_search(lst: list, num: int) -> int:
     # find the midpoint of the list
 
     # compare the number to the midpoint
@@ -15,9 +15,10 @@ def binary_search(lst: list, num: int) -> None:
     new_lst = lst[:midpoint-1] - left half
     
     """
+    new_lst = []
 
     # call binary search on the new list
-    binary_search(new_lst, num)
+    return binary_search(new_lst, num)
 
 
 

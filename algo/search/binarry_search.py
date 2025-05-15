@@ -2,6 +2,14 @@ from random import randint
 # https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
 
 def binary_search(lst: list, num: int) -> int:
+    """
+    Split the sorted list in half and search for the number.
+    Use the midpoint as the pivot.
+
+    :param lst: sorted list
+    :param num: int to search for
+    :return: num if found, else -1
+    """
     # find the midpoint of the list
 
     # compare the number to the midpoint

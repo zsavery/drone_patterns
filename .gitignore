@@ -2,3 +2,4 @@
 staging
 .staging
 */.hidden
+*/__pycache__

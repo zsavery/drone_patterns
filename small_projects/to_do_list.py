@@ -42,4 +42,5 @@ if __name__ == '__main__':
     # use function to remove items from the list
     response = ""
     while response != "quit":
+        print("Current to-do list: {}".format(todo_lst))
         response = check_item_off_lst(todo_lst)

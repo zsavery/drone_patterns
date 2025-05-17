@@ -6,3 +6,4 @@ staging
 */.hidden/
 */__pycache__/
 .worktrees
+__pycache/

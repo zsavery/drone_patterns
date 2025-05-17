@@ -1,5 +1,5 @@
 import pytest
-from binarry_search import binary_search
+from binary_search import binary_search
 
 
 def test_binary_search_basic():

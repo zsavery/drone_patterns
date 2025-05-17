@@ -2,6 +2,7 @@ from typing import TypeVar
 
 T = TypeVar('T')
 
+
 def binary_search(lst: list, item: T) -> T:
     """
     Split the sorted list in half and search for the number.

@@ -2,5 +2,5 @@
 import cProfile
 from count_by_var import count_by_var
 
-cProfile.run("count_by_var(2, 1000)",)
+cProfile.run("count_by_var(2, 1000)")
 

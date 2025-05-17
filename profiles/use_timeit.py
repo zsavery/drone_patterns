@@ -8,6 +8,7 @@ execution_time = timeit.timeit("count_by_var(3, 500)",
                                number=100)
 print(f"Time: {execution_time:.6f}")
 
+##########################################################
 test_function = lambda: count_by_var(3, 500)
 
 execution_time = timeit.timeit(test_function, number=100)

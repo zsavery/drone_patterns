@@ -1,6 +1,7 @@
 .idea
 staging
-.venv
+.venv*
+venv
 .vscode
 .staging/
 */.hidden/

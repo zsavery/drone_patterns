@@ -1,104 +1,46 @@
-# Drone Patterns - Code Examples
+# Drone Patterns Project
 
-## import module
-```python
-from easytello import tello
-```
+## Overview
+This project contains various algorithms and patterns for drone programming and general programming practice. The main focus is on implementing different algorithms and control patterns for drone operations.
 
-## Connecting to the Drone
-```python
-my_drone = tello.Tello()
-```
-
-## Start and End Flight
-### Start
-```python
-my_drone.takeoff()
-```
-### End
-```python
-my_drone.land()
-```
-
-### Emergency Stop
-```python
-my_drone.emergeny()
-```
-## Directional Movement 
-
-### x - axis
-
-```python
-my_drone.forward(distance)
-my_drone.back(distance)
-```
-
-### y - axis
-
-```python
-my_drone.left(distance)
-my_drone.right(distance)
-```
-
-### z - axis
-
-```python
-my_drone.up(distance)
-my_drone.down(distance)
-```
-
-### flip
-
-```python
-my_drone.flip('l')
-my_drone.flip('r')
-```
+## Project Structure
 
 
-## camera
+## Featured Components
 
-```python
-my_drone.streamon()
-camera_state = my_drone.stream_state
-print(camera_state)
-my_drone.streamoff()
-camera_state = my_drone.stream_state
-print(camera_state)
-```
+### Binary Search Implementation
+Located in `algo/search/binary/`, this implementation includes:
+- `binary_search.py`: Generic recursive binary search algorithm
+- `Runme.py`: Interactive interface for testing binary search
+- `test_binary_search.py`: Unit tests for the binary search implementation
 
+#### Binary Search Features
+- Generic type support using Python's TypeVar
+- Recursive implementation
+- Supports multiple data types (int, float, string)
+- Returns -1 if item not found
+- Works with sorted lists only
 
-## Status 
+#### Running the Binary Search Program
+1. Navigate to the binary search directory: bash cd algo/search/binary
+2. Run the program: bash python Runme.py
+3. Usage:
+- Select a data type by entering 'int', 'float', or 'string'
+- Enter values to search for in the selected list
+- Type 'back' to change data type
+- Type 'quit' to exit the program
 
-### battery
-```python
-result = my_drone.get_battery()
-print("Battery Level: {}".format)
-```
+### Drone Control
+The project includes various drone control patterns and utilities:
+- Basic movement patterns
+- Temperature and attitude monitoring
+- Coordinate-based movement
+- Threading implementations for parallel operations
 
-### temperature
-```python
-result = my_drone.get_battery()
-print("Battery Level: {}".format)
-```
+## Requirements
+- Python 3.10
+- Virtual environment management with virtualenv
 
-### atmospheric pressure
-```python
-result = my_drone.get_battery()
-print("Battery Level: {}".format)
-```
-
-### height
-```python
-result = my_drone.get_height()
-print("Battery Level: {}".format)
-```
-
-### attitude
-In reference to a drone, attitude refers to the orientation of the drone relative to the Earth’s surface. It describes how the drone is tilted or rotated in three-dimensional space, typically using three angles:
-1.	Pitch – Tilt forward or backward (nose up/down).
-2.	Roll – Tilt left or right (wing up/down).
-3.	Yaw – Rotation around the vertical axis (turning left or right like a compass direction).
-
-```python
-result = my_drone.get_attitude()
-```
+## Setup
+1. Clone the repository
+2. Create and activate virtual environment:

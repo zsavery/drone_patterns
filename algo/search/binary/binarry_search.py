@@ -1,7 +1,9 @@
 from random import randint
+from typing import T
+
 # https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
 
-def binary_search(lst: list, num: int) -> int:
+def binary_search(lst: list, num: T):
     """
     Split the sorted list in half and search for the number.
     Use the midpoint as the pivot.
@@ -10,7 +12,12 @@ def binary_search(lst: list, num: int) -> int:
     :param num: int to search for
     :return: num if found, else -1
     """
+    
+    if len(lst) == 0:
+        raise ValueError("List is empty")
+    
     # find the midpoint of the list
+    midpoint = len(lst) // 2
 
     # compare the number to the midpoint
 
@@ -18,12 +25,17 @@ def binary_search(lst: list, num: int) -> int:
         return lst[midpoint]
 
     # split list in half into new_lst
-    """
-    new_lst = lst[midpoint+1:] - right half
-    new_lst = lst[:midpoint-1] - left half
-    
-    """
     new_lst = []
+    
+    if num < lst[midpoint]:
+        # search left half
+        new_lst = lst[:midpoint]
+    else:
+        # search right half
+        new_lst = lst[midpoint:]
+    # check if the new list is empty
+    if len(new_lst) == 0:
+        return -1
 
     # call binary search on the new list
     return binary_search(new_lst, num)

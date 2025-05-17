@@ -1,5 +1,8 @@
 .idea
 staging
-.staging
-*/.hidden
-*/__pycache__
+.venv
+.vscode
+.staging/
+*/.hidden/
+*/__pycache__/
+.worktrees

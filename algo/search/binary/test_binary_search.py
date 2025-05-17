@@ -1,35 +1,65 @@
-from binarry_search import binary_search
 import pytest
+from binarry_search import binary_search
 
 
-@pytest.fixture
-def sorted_list():
-    """Fixture to provide a sorted list for testing."""
-    return [7, 14, 17, 37, 53, 71, 82, 84, 90, 99]
+def test_binary_search_basic():
+    """Test basic binary search functionality"""
+    lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert binary_search(lst, 5) == 5
+    assert binary_search(lst, 1) == 1
+    assert binary_search(lst, 10) == 10
 
 
-def test_empty_list():
-    """Test binary search with an empty list."""
-    test_lst = []
-    assert len(test_lst) == 0, f"Expected list of size 0, but got {len(test_lst)}"
-    assert test_lst == [], f"Expected empty list, but got {test_lst}"
-    with pytest.raises(ValueError):
-        binary_search(test_lst, 1)
+def test_binary_search_not_found():
+    """Test when element is not in list"""
+    lst = [1, 2, 3, 4, 5]
+    assert binary_search(lst, 6) == -1
+    assert binary_search(lst, 0) == -1
+    assert binary_search(lst, -1) == -1
 
 
-def test_search_item_in_list(sorted_list):
-    """Test binary search for items that exist in the list."""
-    for index, value in enumerate(sorted_list):
-        expected_value = sorted_list[index]
-        result = binary_search(sorted_list, value)
-        assert result == expected_value, f"Expected {expected_value}, but got {result}"
-    
-    assert len(sorted_list) == 10, f"List should have 10 elements, but has {len(sorted_list)}"
+def test_binary_search_empty_list():
+    """Test with empty list"""
+    assert binary_search([], 1) == -1
 
 
-def test_search_item_not_in_list(sorted_list):
-    """Test binary search for items that do not exist in the list."""
-    not_in_list = [1, 15, 50, 100]
-    for value in not_in_list:
-        result = binary_search(sorted_list, value)
-        assert result == -1, f"Expected -1 for value {value}, but got {result}"
+def test_binary_search_single_element():
+    """Test with a single element list"""
+    assert binary_search([1], 1) == 1
+    assert binary_search([1], 2) == -1
+
+
+def test_binary_search_duplicate_elements():
+    """Test with duplicate elements"""
+    lst = [1, 2, 2, 2, 3, 4, 5]
+    assert binary_search(lst, 2) == 2
+
+
+def test_binary_search_large_numbers():
+    """Test with large numbers"""
+    lst = [1000, 2000, 3000, 4000, 5000]
+    assert binary_search(lst, 3000) == 3000
+    assert binary_search(lst, 6000) == -1
+
+
+def test_binary_search_negative_numbers():
+    """Test with negative numbers"""
+    lst = [-5, -4, -3, -2, -1, 0, 1]
+    assert binary_search(lst, -3) == -3
+    assert binary_search(lst, 0) == 0
+    assert binary_search(lst, -6) == -1
+
+
+def test_binary_search_edge_cases():
+    """Test edge cases"""
+    lst = [1, 2]
+    assert binary_search(lst, 1) == 1
+    assert binary_search(lst, 2) == 2
+    assert binary_search(lst, 3) == -1
+
+
+def test_binary_search_floats():
+    """Test with floating point numbers"""
+    lst = [1.1, 2.2, 3.3, 4.4, 5.5]
+    assert binary_search(lst, 3.3) == 3.3
+    assert binary_search(lst, 2.5) == -1

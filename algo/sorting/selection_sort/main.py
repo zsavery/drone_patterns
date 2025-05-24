@@ -8,6 +8,8 @@ def selection_sort(lst: list)-> list:
     and moves it to the sorted part.
 
     Complexity: O(n^2)
+    Best case: O(n^2)
+    Worst case: O(n^2)
     """
     result = lst
     for i in range(len(result)):

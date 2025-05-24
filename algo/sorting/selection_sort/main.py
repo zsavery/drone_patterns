@@ -3,7 +3,10 @@ import json
 
 def selection_sort(lst: list)-> list:
     """
-    Sort a list of floats using selection sort.
+    Sort a list of floats using selection sort. Selection Sort divides the array into a
+    sorted and an unsorted part. It repeatedly finds the minimum from the unsorted part
+    and moves it to the sorted part.
+
     Complexity: O(n^2)
     """
     result = lst

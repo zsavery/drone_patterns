@@ -1,4 +1,17 @@
 import json
+def bubble_sort(lst):
+    """Sort a list of floats using bubble sort."""
+    # Initialize the sorted list
+    result = lst
+    # Iterate over the list
+    for i in range(len(result)):
+        # Iterate over the unsorted list
+        for j in range(i + 1, len(result)):
+            # Swap if the element is greater than the next element
+            if result[i] > result[j]:
+                result[i], result[j] = result[j], result[i]
+    return result
+
 
 if __name__ == '__main__':
     # Read the text file
@@ -9,7 +22,10 @@ if __name__ == '__main__':
     print(float_list)
 
     # Sort the list of floats
-    sorted_list = [] # code here
+    sorted_list = bubble_sort(float_list) # code here
+
+    # Print sorted list
+    print(sorted_list)
 
     with open('sorted_list.txt', 'w') as file:
         for item in sorted_list:

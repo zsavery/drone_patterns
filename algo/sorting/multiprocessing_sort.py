@@ -8,27 +8,29 @@ from selection_sort.main import selection_sort
 
 def profile_selection_sort(lst):
     # Enable profile for selection_sort
-    pr = cProfile.Profile()
+
     # Enable profile
-    pr.enable()
+
     # using a copy of our collection runit true
-    selection_sort(lst.copy())
+
     # disable profile
-    pr.disable()
+
     # print stats
-    pr.print_stats()
+
+    pass
 
 def profile_bubble_sort(lst):
     # Enable profile for selection_sort
-    pr = cProfile.Profile()
+
     # Enable profile
-    pr.enable()
+
     # using a copy of our collection runit true
-    bubble_sort(lst.copy())
+
     # disable profile
-    pr.disable()
+
     # print stats
-    pr.print_stats()
+    pass
+
 
 if __name__ == "__main__":
     # Generate a random sample array

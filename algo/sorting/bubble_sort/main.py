@@ -1,6 +1,14 @@
 import json
 def bubble_sort(lst):
-    """Sort a list of floats using bubble sort."""
+    """Sort a list of floats using bubble sort. Bubble Sort repeatedly steps through the
+    list, compares adjacent elements, and swaps them if they are in the wrong order. This
+    process repeats until no swaps are needed.
+
+    Complexity: O(n^2)
+    Best Case: O(n)
+    Worst Case: O(n^2)
+
+    """
     # Initialize the sorted list
     result = lst
     # Iterate over the list

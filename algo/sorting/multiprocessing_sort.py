@@ -8,37 +8,35 @@ from selection_sort.main import selection_sort
 
 def profile_selection_sort(lst):
     # Enable profile for selection_sort
-
+    pr = cProfile.Profile()
     # Enable profile
-
+    pr.enable()
     # using a copy of our collection runit true
-
+    selection_sort(lst.copy())
     # disable profile
-
+    pr.disable()
     # print stats
-
-    pass
+    pr.print_stats()
 
 def profile_bubble_sort(lst):
     # Enable profile for selection_sort
-
+    pr = cProfile.Profile()
     # Enable profile
-
+    pr.enable()
     # using a copy of our collection runit true
-
+    bubble_sort(lst.copy())
     # disable profile
-
+    pr.disable()
     # print stats
-    pass
-
+    pr.print_stats()
 
 if __name__ == "__main__":
     # Generate a random sample array
     arr = [random.randint(0, 1000) for _ in range(1000)]
 
     # Run selection_sort and bubble_sort in parallel using multiprocessing
-    p1 = None # Edit line
-    p2 = None # Edit Line
+    p1 = multiprocessing.Process(target=profile_bubble_sort, args=(arr,)) # Edit line
+    p2 = multiprocessing.Process(target=profile_selection_sort, args=(arr,)) # Edit Line
 
     # Do not change below
     start_time = time.time() # get time at start

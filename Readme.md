@@ -38,9 +38,31 @@ The project includes various drone control patterns and utilities:
 - Threading implementations for parallel operations
 
 ## Requirements
-- Python 3.10
+- Python 3.10.17>=
 - Virtual environment management with virtualenv
 
 ## Setup
 1. Clone the repository
 2. Create and activate virtual environment:
+
+#### Linux/Mac
+```bash
+python -m venv .venv 
+source .venv/bin/activate
+```
+or
+```bash
+python3.10 -m venv .venv 
+source .venv/bin/activate
+```
+
+#### Windows
+```bash
+python -m venv .venv 
+source .venv\Scripts\activate
+```
+or
+```bash
+python3.10 -m venv .venv 
+source .venv\Scripts\activate
+```

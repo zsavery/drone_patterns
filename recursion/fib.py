@@ -1,8 +1,20 @@
 def recursive_fibonacci(n):
-    print(f"recursive_fibonacci({n})")
+    return f"recursive_fibonacci({n})"
 
 def iterative_fibonacci(n):
-    print(f"iterative_fibonacci({n})")
+    """
+    1,1,2,3,5,8
+    """
+    if n < 0:
+        return -1
+    x,y = 0, 1
+
+    # y, x = x+y, y
+    for _ in range(n):
+        y, x = x + y, y
+
+    return y
+
 
 
 if __name__ == '__main__':
@@ -21,16 +33,21 @@ if __name__ == '__main__':
     fibonacci_version = "None"
 
 
+    result = None
     while fibonacci_version == "None":
         fibonacci_version = input(f"Fibonacci version\n1. Series\n2. Recursive\n3. Exit\nEnter your choice: ")
         match fibonacci_version.lower():
             case "series":
-                recursive_fibonacci(n_terms)
+                result = iterative_fibonacci(n_terms)
                 break
             case "recursive":
-                iterative_fibonacci(n_terms)
+                result = recursive_fibonacci(n_terms)
                 break
             case "exit"|"quit"|"q":
                 break
             case _:
                 fibonacci_version = "None"
+
+    print(f"Fibonacci version: {fibonacci_version}\n" +
+          f"Fibonacci nth term: {result}\n")
+

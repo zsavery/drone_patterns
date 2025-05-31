@@ -2,8 +2,8 @@ import cProfile
 import multiprocessing
 import random
 import time
-from bubble_sort.main import   bubble_sort
-from selection_sort.main import selection_sort
+from my_algo import   bubble_sort
+from my_algo import selection_sort
 
 
 def profile_selection_sort(lst):

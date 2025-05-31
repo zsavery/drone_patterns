@@ -25,14 +25,12 @@ if __name__ == '__main__':
         fibonacci_version = input(f"Fibonacci version\n1. Series\n2. Recursive\n3. Exit\nEnter your choice: ")
         match fibonacci_version.lower():
             case "series":
-                recursive_fibonacci(fibonacci_version)
+                recursive_fibonacci(n_terms)
                 break
             case "recursive":
-                iterative_fibonacci(fibonacci_version)
+                iterative_fibonacci(n_terms)
                 break
             case "exit"|"quit"|"q":
                 break
             case _:
                 fibonacci_version = "None"
-
-

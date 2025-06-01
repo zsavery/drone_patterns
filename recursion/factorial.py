@@ -1,9 +1,11 @@
-def factorial(n):
-    print(f"factorial({n})")
+def recursive_factorial(n):
+    if n <= 1:
+        return n
+    return recursive_factorial(n - 1) * n
 
 if __name__ == '__main__':
     # Get
-    num = None
+    num = 6
 
     # Call factorial
     print("Factorial of number", num, "=", recursive_factorial(num))

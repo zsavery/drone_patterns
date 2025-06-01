@@ -1,9 +1,14 @@
 def recursive_fibonacci(n):
-    return f"recursive_fibonacci({n})"
+    if n <= 1:
+        return n
+    else:
+        return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
+
 
 def iterative_fibonacci(n):
     """
     1,1,2,3,5,8
+
     """
     if n < 0:
         return -1
@@ -15,12 +20,8 @@ def iterative_fibonacci(n):
 
     return y
 
-
-
 if __name__ == '__main__':
-
-    # Change this to be user input if you wish!
-    n_terms = 0
+    n_terms = 0 # nth number in a fibonacci sequence
 
     while True:
         n_terms = int(input("Number of terms: "))

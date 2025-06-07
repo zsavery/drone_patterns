@@ -8,6 +8,15 @@ def quick_sort(arr, left, right):
     >>> quick_sort(arr=[38, 27, 43, 3, 9, 82, 10], 0, len(arr) -1 )
     [3, 9, 10, 27, 38, 43, 82]
      """
+    if left < right:
+       # Find pivot position
+
+       # recursive call left
+
+       # recursive call right
+       pass
+
+    return arr
     
 
 def quick_helper(arr, left, right)-> int:
